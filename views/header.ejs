@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">EnigmaConf</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Acceuil</a></li>
+            <% if(userId){ %>
+                <li><a href=<%-"/users/" + userId + "/conferences"%>>Moderer</a></li>
+                <li><a href="/users/disconnect">Deconnexion</a></li>
+            <% } else { %>
+                <li><a href="/users/login">Connexion</a></li>
+                <li><a href="/users/add">Inscription</a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+<div style="margin-top: 20px"></div>

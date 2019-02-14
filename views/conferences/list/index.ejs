@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<% include ../../header.ejs %>
+<form action="/conferences/post" method="POST">
+  <div class="form-group">
+    <label for="InputEmail">Nom de la conference</label>
+    <input type="text" class="form-control" name="name" id="InputEmail" placeholder="Entrer le nom de la conférence">
+  </div>
+  <button type="submit" class="btn btn-primary">Créer</button>
+</form>
+</body>
+</html>

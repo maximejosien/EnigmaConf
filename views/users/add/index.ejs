@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<% include ../../header.ejs %>
+<form action="/users/post" method="POST">
+  <div class="form-group">
+    <label for="InputEmail">Adresse Email</label>
+    <input type="email" class="form-control" name="email" id="InputEmail" placeholder="Entrer adresse email">
+  </div>
+  <div class="form-group">
+    <label for="FirstName">Prénom</label>
+    <input type="text" class="form-control" name="firstName" id="FirstName" placeholder="Entrer prénom">
+  </div>
+  <div class="form-group">
+    <label for="LastName">Nom</label>
+    <input type="text" class="form-control" name="lastName" id="LastName" placeholder="Entrer nom">
+  </div>
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input type="password" class="form-control" name="password" id="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

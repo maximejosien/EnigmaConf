@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<% include ../header.ejs %>
+<a class="btn btn-primary" href="/conferences/add" role="button">Créer une conférence</a>
+<table class="table" style="margin-top: 20px">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom de la conférence</th>
+        <th scope="col">Conférencier</th>
+        <th scope="col">Date</th>
+        <th scope="col">Nombre d'inscrits</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (var conference in conferences ) { %>
+        <tr>
+            <td><%- conferences[conference]._id %></td>
+            <td><%- conferences[conference].name %></td>
+            <td><%- conferences[conference].speaker.firstName + ' ' + conferences[conference].speaker.lastName %></td>
+            <td><%- conferences[conference].date %></td>
+            <td><%- conferences[conference].users.length %></td>
+        <% if( userId ){ %>
+                <td>
+                    <a class="btn btn-primary" href=<%-"/conferences/" + conferences[conference]._id%> role="button" style="background-color: #da921d; border-color: #da921d">Accès conférence</a>
+                    <a class="btn btn-primary" href=<%-"/conferences/join/" + conferences[conference]._id%> role="button">Inscription</a>
+                </td>
+            <% } %>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+</body>
+</html>
